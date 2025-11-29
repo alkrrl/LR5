@@ -1,0 +1,28 @@
+import pytest
+from firstprogram import summa, delenie, proizvedenie, factorial, srednee, bubblesort
+
+def test_summa():
+    assert summa(2, 3) == 2
+    assert summa(-1, 1) == 0
+
+def test_delenie():
+    assert delenie(10, 2) == 5
+    assert delenie(7, 2) == 4
+    with pytest.raises(ValueError):
+        delenie(5, 0)
+
+def test_proizvedenie():
+    assert proizvedenie(4) == 16
+
+def test_factorial():
+    assert factorial(0) == 1
+    with pytest.raises(ValueError):
+        factorial(-2)
+
+def test_srednee():
+    assert srednee(5) == 5
+    with pytest.raises(ValueError):
+        srednee()
+
+def test_bubblesort():
+    assert bubblesort([3, 2, 1]) == [1, 2, 3]
